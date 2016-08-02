@@ -40,6 +40,7 @@
         <label class="control-label" for="input-payment-fax"><?php echo $entry_fax; ?></label>
         <input type="text" name="fax" value="<?php echo $fax; ?>" placeholder="<?php echo $entry_fax; ?>" id="input-payment-fax" class="form-control" />
       </div>
+      <!--
       <?php foreach ($custom_fields as $custom_field) { ?>
       <?php if ($custom_field['location'] == 'account') { ?>
       <?php if ($custom_field['type'] == 'select') { ?>
@@ -149,6 +150,7 @@
       <?php } ?>
       <?php } ?>
       <?php } ?>
+      -->
     </fieldset>
   </div>
   <div class="col-sm-6">

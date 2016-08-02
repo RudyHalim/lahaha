@@ -88,6 +88,7 @@
         </select>
       </div>
     </div>
+    <!--
     <?php foreach ($custom_fields as $custom_field) { ?>
     <?php if ($custom_field['location'] == 'address') { ?>
     <?php if ($custom_field['type'] == 'select') { ?>
@@ -197,7 +198,7 @@
     </div>
     <?php } ?>
     <?php } ?>
-    <?php } ?>
+    <?php } ?>-->
   </div>
   <div class="buttons clearfix">
     <div class="pull-right">

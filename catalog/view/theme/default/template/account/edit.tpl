@@ -63,6 +63,7 @@
               <input type="text" name="fax" value="<?php echo $fax; ?>" placeholder="<?php echo $entry_fax; ?>" id="input-fax" class="form-control" />
             </div>
           </div>
+          <!--
           <?php foreach ($custom_fields as $custom_field) { ?>
           <?php if ($custom_field['location'] == 'account') { ?>
           <?php if ($custom_field['type'] == 'select') { ?>
@@ -216,6 +217,7 @@
           <?php } ?>
           <?php } ?>
           <?php } ?>
+          -->
         </fieldset>
         <div class="buttons clearfix">
           <div class="pull-left"><a href="<?php echo $back; ?>" class="btn btn-default"><?php echo $button_back; ?></a></div>
