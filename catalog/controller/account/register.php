@@ -400,7 +400,7 @@ class ControllerAccountRegister extends Controller {
 		// 	$customer_group_id = $this->request->post['customer_group_id'];
 		// } else {
 		// 	$customer_group_id = $this->config->get('config_customer_group_id');
-		// }
+		// } 
 
 		// Custom field validation
 		$this->load->model('account/custom_field');

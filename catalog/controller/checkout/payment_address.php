@@ -77,6 +77,12 @@ class ControllerCheckoutPaymentAddress extends Controller {
 			$json['redirect'] = $this->url->link('checkout/cart');
 		}
 
+		// $json['redirect'] = $this->url->link('account/address/add');
+		// $validate_address_id = trim(str_replace(",", "", $this->request->post['address_id']));
+		// if(strlen($validate_address_id) <= 0) {
+		// 	$json['redirect'] = $this->url->link('account/address/add');
+		// }
+
 		// Validate minimum quantity requirements.
 		$products = $this->cart->getProducts();
 
@@ -98,6 +104,7 @@ class ControllerCheckoutPaymentAddress extends Controller {
 
 		if (!$json) {
 			if (isset($this->request->post['payment_address']) && $this->request->post['payment_address'] == 'existing') {
+
 				$this->load->model('account/address');
 
 				if (empty($this->request->post['address_id'])) {
@@ -114,6 +121,20 @@ class ControllerCheckoutPaymentAddress extends Controller {
 
 					unset($this->session->data['payment_method']);
 					unset($this->session->data['payment_methods']);
+
+					if(empty($this->session->data['payment_address']['firstname'])) {
+						$json['redirect'] = $this->url->link('account/edit');
+					}
+					if(empty($this->session->data['payment_address']['lastname'])) {
+						$json['redirect'] = $this->url->link('account/edit');
+					}
+					if(empty($this->session->data['payment_address']['address_1'])) {
+						$json['redirect'] = $this->url->link('account/address/edit&address_id='.$this->request->post['address_id']);
+					}
+					if(empty($this->session->data['payment_address']['city'])) {
+						$json['redirect'] = $this->url->link('account/address/edit&address_id='.$this->request->post['address_id']);
+					}
+
 				}
 			} else {
 				if ((utf8_strlen(trim($this->request->post['firstname'])) < 1) || (utf8_strlen(trim($this->request->post['firstname'])) > 32)) {

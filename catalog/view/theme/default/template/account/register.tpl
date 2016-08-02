@@ -522,7 +522,7 @@
                         </div>
                     </div>
                 </fieldset>
-                -->
+                --> 
                 <?php echo $captcha; ?>
                 <?php if ($text_agree) { ?>
                 <div class="buttons">
