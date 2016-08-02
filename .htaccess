@@ -1,0 +1,11 @@
+Options +FollowSymlinks
+Options -Indexes
+
+RewriteEngine On
+
+RewriteBase /
+RewriteRule ^u/([^/]+)$ index.php?route=account/register&register=$1 [L]
+RewriteRule ^u/([^/]+)/$ index.php?route=account/register&register=$1 [L]
+
+RewriteCond %{HTTP_HOST} ^www.lahaha.asia [NC]
+RewriteRule (.*) http://lahaha.asia/$1 [R=301,L]
