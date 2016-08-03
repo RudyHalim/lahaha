@@ -828,3 +828,6 @@ table.table-hover tr:hover {
 .account-register .agree {
 	color:#fff;
 }
+.table-responsive a {
+	color: #fff;
+}
