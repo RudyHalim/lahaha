@@ -19,6 +19,11 @@
     <?php $class = 'col-sm-12'; ?>
     <?php } ?>
     <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
+        <?php if ($text_checkout_disclaimer) { ?>
+            <div class="alert alert-danger"><i class="fa fa-exclamation-circle"></i> <?php echo $text_checkout_disclaimer; ?>
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+        <?php } ?>
       <h1><?php echo $heading_title; ?></h1>
       <div class="panel-group" id="accordion">
         <div class="panel panel-default">
