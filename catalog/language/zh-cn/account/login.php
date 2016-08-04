@@ -13,7 +13,7 @@ $_['text_i_am_returning_customer'] = '如果您已经是本站会员，请直接
 $_['text_forgotten']               = '忘记密码？';
 
 // Entry
-$_['entry_email']                  = 'Email 信箱';
+$_['entry_email']                  = '信箱 / 微信';
 $_['entry_password']               = '密码';
 
 // Error

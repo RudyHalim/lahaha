@@ -11,7 +11,7 @@ $_['text_success']       = '成功： 帐号资讯已更新。';
 // Entry
 $_['entry_firstname']    = '名字';
 $_['entry_lastname']     = '姓氏';
-$_['entry_email']        = 'Email';
+$_['entry_email']        = '信箱 / 微信';
 $_['entry_telephone']    = '联系电话';
 $_['entry_fax']          = '传真号码';
 

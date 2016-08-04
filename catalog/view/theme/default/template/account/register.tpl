@@ -65,7 +65,7 @@
                     <div class="form-group required">
                         <label class="col-sm-2 control-label" for="input-email"><?php echo $entry_email; ?></label>
                         <div class="col-sm-10">
-                            <input type="email" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email" class="form-control" />
+                            <input type="text" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-email" class="form-control" />
                             <?php if ($error_email) { ?>
                             <div class="text-danger"><?php echo $error_email; ?></div>
                             <?php } ?>
@@ -160,26 +160,35 @@
                         </div>
                     </div>
                     <?php } ?>
-                    <?php if ($custom_field['type'] == 'text') { ?>
-                    <div id="custom-field<?php echo $custom_field['custom_field_id']; ?>" class="form-group custom-field" data-sort="<?php echo $custom_field['sort_order']; ?>">
-                        <label class="col-sm-2 control-label" for="input-custom-field<?php echo $custom_field['custom_field_id']; ?>"><?php echo $custom_field['name']; ?></label>
-                        <div class="col-sm-10">
-                            <?php
-                            if($custom_field['custom_field_id'] == 1) {
-                                ?>
-                                <label style="padding-top:7px"><?=isset($_GET['register']) ? $_GET['register'] : ""?></label>
-                                <input type="hidden" name="custom_field[<?php echo $custom_field['location']; ?>][<?php echo $custom_field['custom_field_id']; ?>]" value="<?=isset($_GET['register']) ? $_GET['register'] : ""?>">
-                                <?php
-                            } else {
-                                ?>
-                                <input type="text" name="custom_field[<?php echo $custom_field['location']; ?>][<?php echo $custom_field['custom_field_id']; ?>]" value="<?php echo isset($_GET['register']) ? $_GET['register'] : (isset($register_custom_field[$custom_field['custom_field_id']]) ? $register_custom_field[$custom_field['custom_field_id']] : $custom_field['value']); ?>" placeholder="<?php echo $custom_field['name']; ?>" id="input-custom-field<?php echo $custom_field['custom_field_id']; ?>" class="form-control" />
-                                <!-- <input type="text" name="custom_field[<?php echo $custom_field['location']; ?>][<?php echo $custom_field['custom_field_id']; ?>]" value="<?php echo (isset($register_custom_field[$custom_field['custom_field_id']]) ? $register_custom_field[$custom_field['custom_field_id']] : $custom_field['value']); ?>" placeholder="<?php echo $custom_field['name']; ?>" id="input-custom-field<?php echo $custom_field['custom_field_id']; ?>" class="form-control" /> -->
-                                <?php if (isset($error_custom_field[$custom_field['custom_field_id']])) { ?>
-                                <div class="text-danger"><?php echo $error_custom_field[$custom_field['custom_field_id']]; ?></div>
-                                <?php } ?>
-                            <?php } ?>
-                        </div>
-                    </div>
+                    <?php if ($custom_field['type'] == 'text') { 
+                        $showdiv = true;
+
+                        if ($custom_field['custom_field_id'] == 1) { 
+                            if(!isset($_GET['register'])) {
+                                $showdiv = false;
+                            }
+                        } 
+
+                        if($showdiv) { ?>
+                            <div id="custom-field<?php echo $custom_field['custom_field_id']; ?>" class="form-group custom-field" data-sort="<?php echo $custom_field['sort_order']; ?>">
+                                <label class="col-sm-2 control-label" for="input-custom-field<?php echo $custom_field['custom_field_id']; ?>"><?php echo $custom_field['name']; ?></label>
+                                <div class="col-sm-10">
+                                    <?php
+                                    if($custom_field['custom_field_id'] == 1) {
+                                        ?>
+                                        <label style="padding-top:7px"><?=isset($_GET['register']) ? $_GET['register'] : ""?></label>
+                                        <input type="hidden" name="custom_field[<?php echo $custom_field['location']; ?>][<?php echo $custom_field['custom_field_id']; ?>]" value="<?=isset($_GET['register']) ? $_GET['register'] : ""?>">
+                                        <?php
+                                    } else {
+                                        ?>
+                                        <input type="text" name="custom_field[<?php echo $custom_field['location']; ?>][<?php echo $custom_field['custom_field_id']; ?>]" value="<?php echo isset($_GET['register']) ? $_GET['register'] : (isset($register_custom_field[$custom_field['custom_field_id']]) ? $register_custom_field[$custom_field['custom_field_id']] : $custom_field['value']); ?>" placeholder="<?php echo $custom_field['name']; ?>" id="input-custom-field<?php echo $custom_field['custom_field_id']; ?>" class="form-control" />
+                                        <?php if (isset($error_custom_field[$custom_field['custom_field_id']])) { ?>
+                                        <div class="text-danger"><?php echo $error_custom_field[$custom_field['custom_field_id']]; ?></div>
+                                        <?php } ?>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                        <?php } ?>
                     <?php } ?>
                     <?php if ($custom_field['type'] == 'textarea') { ?>
                     <div id="custom-field<?php echo $custom_field['custom_field_id']; ?>" class="form-group custom-field" data-sort="<?php echo $custom_field['sort_order']; ?>">

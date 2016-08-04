@@ -359,7 +359,8 @@ class ControllerAccountRegister extends Controller {
 		// 	$this->error['lastname'] = $this->language->get('error_lastname');
 		// }
 
-		if ((utf8_strlen($this->request->post['email']) > 96) || !filter_var($this->request->post['email'], FILTER_VALIDATE_EMAIL)) {
+		// if ((utf8_strlen($this->request->post['email']) > 96) || (utf8_strlen($this->request->post['email']) > 1 && !filter_var($this->request->post['email'], FILTER_VALIDATE_EMAIL))) {
+		if ((utf8_strlen($this->request->post['email']) > 96) ) {
 			$this->error['email'] = $this->language->get('error_email');
 		}
 
@@ -395,7 +396,8 @@ class ControllerAccountRegister extends Controller {
 		// 	$this->error['zone'] = $this->language->get('error_zone');
 		// }
 
-		// // Customer Group
+		// Customer Group
+		$customer_group_id = "";
 		// if (isset($this->request->post['customer_group_id']) && is_array($this->config->get('config_customer_group_display')) && in_array($this->request->post['customer_group_id'], $this->config->get('config_customer_group_display'))) {
 		// 	$customer_group_id = $this->request->post['customer_group_id'];
 		// } else {

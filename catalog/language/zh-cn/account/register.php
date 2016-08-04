@@ -16,7 +16,7 @@ $_['text_agree']           = '我已经阅读并同意 <a href="%s" class="agree
 $_['entry_customer_group'] = '客户群组';
 $_['entry_firstname']      = '名字';
 $_['entry_lastname']       = '姓氏';
-$_['entry_email']          = 'Email 信箱';
+$_['entry_email']          = '信箱 / 微信';
 $_['entry_telephone']      = '联系电话';
 $_['entry_fax']            = '传真号码';
 $_['entry_company']        = '公司名称';

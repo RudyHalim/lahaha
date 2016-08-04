@@ -16,7 +16,7 @@ $_['text_agree']                  = 'I have read and agree to the <a href="%s" c
 $_['entry_customer_group']        = 'Customer Group';
 $_['entry_firstname']             = 'First Name';
 $_['entry_lastname']              = 'Last Name';
-$_['entry_email']                 = 'E-Mail';
+$_['entry_email']                 = 'E-Mail / WeChat ID';
 $_['entry_telephone']             = 'Telephone';
 $_['entry_fax']                   = 'Fax';
 $_['entry_company']               = 'Company';

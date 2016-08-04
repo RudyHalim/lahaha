@@ -10,7 +10,7 @@ $_['text_email']      = '请输入您注册帐号时填写的 Email 信箱，并
 $_['text_success']    = '成功： 新密码已发送到您的 Email 信箱 ！';
 
 // Entry
-$_['entry_email']     = 'Email 信箱';
+$_['entry_email']     = '信箱 / 微信';
 $_['entry_password']  = '新密码';
 $_['entry_confirm']   = '确认密码';
 
