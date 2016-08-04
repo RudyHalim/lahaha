@@ -39,7 +39,7 @@ $_['text_week']                      = '周';
 $_['text_semi_month']                = '半月';
 $_['text_month']                     = '月';
 $_['text_year']                      = '年';
-$_['text_checkout_disclaimer']       = '如果取消订单或更改订单请扫描下面二维码加微信通知.<br /><img src="image/WA_Garen.jpeg" width="180" />';
+$_['text_checkout_disclaimer']       = '<img src="image/WA_Garen.jpeg" width="80" /> &nbsp; 如果取消订单或更改订单请扫描下面二维码加微信通知.';
 
 // Column
 $_['column_name']                    = '品名';
